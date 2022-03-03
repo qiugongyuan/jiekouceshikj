@@ -13,12 +13,12 @@ class RunMain():
 
     def send_post(self, url, data):  # 定义一个方法，传入需要的参数url和data
         # 参数必须按照url、data顺序传入
-        result = requests.post(url=url, data=json.dumps(data), headers=headers)  # 因为这里要封装post方法，所以这里的url和data值不能写死
+        result = requests.post(url=url, data=data, headers=headers)  # 因为这里要封装post方法，所以这里的url和data值不能写死
         res = result.json()
         return res
 
     def send_get(self, url, data):
-        result = requests.get(url=url, data=json.dumps(data), headers=headers)
+        result = requests.get(url=url, data=data, headers=headers)
         res = result.json()
         return res
 
