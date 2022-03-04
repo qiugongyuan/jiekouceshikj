@@ -7,7 +7,6 @@ from xlrd import open_workbook
 path = getpathInfo.get_Path()
 
 
-
 class readExcel():
     def get_xls(self, xls_name, sheet_name):  # xls_name填写用例的Excel名称 sheet_name该Excel的sheet名称
         cls = []
@@ -28,4 +27,3 @@ if __name__ == '__main__':  # 我们执行该文件测试一下是否可以正�
     print(readExcel().get_xls('testcase.xlsx', 'login')[0][1])
     print(readExcel().get_xls('testcase.xlsx', 'login')[1][2])
     print(readExcel().get_xls('testcase.xlsx', 'login')[2][3])
-
