@@ -10,8 +10,11 @@ class SendEmail(object):
         msg_to = '360960443@qq.com'  # 收件人邮箱
 
         subject = "python邮件测试"  # 主题
-        content = "这是我使用python smtplib及email模块发送的邮件"
-        msg = MIMEText(content)
+        f = open("F:\\jiekouceshikj\\result\\report.html", 'rb')
+        content = f.read()
+        f.close()
+        message=content.decode('utf-8')
+        msg = MIMEText(message)
         msg['Subject'] = subject
         msg['From'] = msg_from
         msg['To'] = msg_to
