@@ -1,4 +1,3 @@
-import json
 import unittest
 from common import configHttp
 import paramunittest
@@ -23,8 +22,8 @@ class testUserLogin(unittest.TestCase):
 
     def setUp(self):
 
-        print("测试项目："+self.case_name)
-        print("测试路径："+self.path )
+        print("测试项目：" + self.case_name)
+        print("测试路径：" + self.path)
 
     def test01case(self):
         self.checkResult()
@@ -38,10 +37,9 @@ class testUserLogin(unittest.TestCase):
         info = configHttp.RunMain().run_main(self.method, url=url, data=self.data)
         print(info)
 
-        # ss = info.json()
-        if self.case_name == 'login':  # 如果case_name是login，说明合法，返回的code应该为200
+        if self.case_name == 'login':  # 如果case_name是login
             self.assertEqual(info['status'], 0)
-        if self.case_name == 'login_error':  # 同上
+        if self.case_name == 'login_error':  # 如果case_name是login_error
             self.assertEqual(info['msg'], '密码有误')
-        if self.case_name == 'login_null':  # 同上
+        if self.case_name == 'login_null':  # 如果case_name是login_null
             self.assertEqual(info['msg'], 'Pwd不能为空,Name不能为空')
