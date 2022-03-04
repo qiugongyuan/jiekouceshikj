@@ -1,4 +1,5 @@
 import smtplib
+from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
@@ -12,9 +13,18 @@ class SendEmail(object):
         subject = "python邮件测试"  # 主题
         f = open("F:\\jiekouceshikj\\result\\report.html", 'rb')
         content = f.read()
-        f.close()
-        message=content.decode('utf-8')
-        msg = MIMEText(message)
+
+        mail_mul = MIMEMultipart()  # 构建一个邮件对象
+        mail_text = MIMEText("各位好，附件是本次的测试报告，请查阅!谢谢", "plain", "utf-8")  # 构建邮件正文
+        mail_mul.attach(mail_text)  # 把构建好的邮件正文附加到邮件中
+        # 设置附件
+        msg = MIMEText(content, 'html', 'utf-8')
+        msg['Content-type'] = 'application/octet-stream'
+        msg['Content-disposition'] = "attachment; filename ='test.html'"
+        mail_mul.attach(msg)  # 将附加按添加到邮件中
+
+        # 邮件对象
+
         msg['Subject'] = subject
         msg['From'] = msg_from
         msg['To'] = msg_to

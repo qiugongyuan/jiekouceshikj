@@ -64,6 +64,8 @@ class AllTest:  # 定义一个类AllTest
                 fp = open(resultPath, 'wb')  # 打开result/report.html测试报告文件，如果不存在就创建
                 # 调用HTMLTestRunner
                 runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Test Report', description='Test Description')
+                # runner = HTMLTestRunner(stream=fp, title='Test Report', description='Test Description')为啥这样写不行呢
+
                 runner.run(suit)
             else:
                 print("Have no case to test.")
