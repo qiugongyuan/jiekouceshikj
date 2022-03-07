@@ -1,8 +1,9 @@
 import requests
-import json
+import readConfig
 
+token=readConfig.ReadConfig().get_http('token')#将token作为公共参数存储在config.ini文件里
 headers = {
-    "token":"3489786611eb42558a318ef41d01fc34",
+    "token":token,
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800122c) NetType/WIFI Language/zh_CN",
     "Accept-Encoding": "gzip",
     "Accept-Language": "zh-CN,zh;q=0.9",
@@ -15,7 +16,7 @@ class RunMain():
 
     def send_post(self, url, data):  # 定义一个方法，传入需要的参数url和data
         # 参数必须按照url、data顺序传入
-        #   result = requests.post(url=url, data=json.dumps(data), headers=headers)  # 因为这里要封装post方法，所以这里的url和data值不能写死
+        # result = requests.post(url=url, data=json.dumps(data), headers=headers)  # 因为这里要封装post方法，所以这里的url和data值不能写死
         result = requests.post(url=url, data=data, headers=headers)#后续读取excel，需要用到这个格式传参data
         res = result.json()
         return res
