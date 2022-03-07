@@ -20,9 +20,15 @@ class AllTest:  # 定义一个类AllTest
         self.caseListFile = os.path.join(path, "caselist.txt")  # 配置执行哪些测试文件的配置文件路径
         self.caseFile = os.path.join(path, "testcase")  # 真正的测试断言文件路径
         self.caseList = []
-        log.info('resultPath',resultPath)#将resultPath的值输入到日志，方便定位查看问题
-        # log.info('caseListFile',self.caseListFile)
-        # log.info('caselist',self.caseList)
+        #log.info('resultPath',resultPath)#将resultPath的值输入到日志，方便定位查看问题
+        #log.info('caseListFile',self.caseListFile)
+        log.info("resultPath:%s", str(resultPath))  # 将resultPath的值输入到日志，方便定位查看问题
+        log.info("caseListFile:%s", str(self.caseListFile))
+        log.info("caselist:%s-%s" % (str(self.caseList), "12321"))
+        log.error(">>>>><<<<<")
+        log.info('''resultPath:{}'''.format(str(resultPath)))  # 将resultPath的值输入到日志，方便定位查看问题
+        log.info('''caseListFile:{casefile}, {aws}'''.format(casefile=str(self.caseListFile), aws="123"))
+        log.info('''caselist:{}, {case_num}'''.format(str(self.caseList), case_num=len(self.caseList)))
 
     def set_case_list(self):
 
