@@ -25,7 +25,7 @@ class testUserLogin(unittest.TestCase):
         print("测试项目：" + self.case_name)
         print("测试路径：" + self.path)
 
-    def test01case(self):
+    def testlogincase(self):
         self.checkResult()
 
     def tearDown(self):
@@ -33,7 +33,8 @@ class testUserLogin(unittest.TestCase):
 
     def checkResult(self):
 
-        url = geturlParams.geturlParams.get_Url(self)
+        url = geturlParams.geturlParams.get_Url(self)+self.path
+        #print(url)
         info = configHttp.RunMain().run_main(self.method, url=url, data=self.data)
         print(info)
 

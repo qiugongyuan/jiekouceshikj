@@ -5,7 +5,7 @@ readconfig = readConfig.ReadConfig()
 
 class geturlParams():  # 定义一个方法，将从配置文件中读取的进行拼接
     def get_Url(self):
-        new_url = readconfig.get_http('scheme') + '://' + readconfig.get_http('baseurl')  + '/app/user/login'
+        new_url = readconfig.get_http('scheme') + '://' + readconfig.get_http('baseurl')
 
         return new_url
 

@@ -27,7 +27,7 @@ class readExcel():
 
 if __name__ == '__main__':  # 我们执行该文件测试一下是否可以正确获取Excel中的值
     print(readExcel().get_xls('testcase.xlsx', 'login'))
-    # print(readExcel().get_xls('testcase.xlsx', 'order'))
-    # print(readExcel().get_xls('testcase.xlsx', 'login')[0][1])
+    print(readExcel().get_xls('testcase.xlsx', 'search')) #一个excel分多个sheet管理测试用例
+    print(readExcel().get_xls('testcase.xlsx', 'search')[1][2])
     # print(readExcel().get_xls('testcase.xlsx', 'login')[1][2])
     # print(readExcel().get_xls('testcase.xlsx', 'login')[2][3])
