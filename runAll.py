@@ -45,6 +45,8 @@ class AllTest:  # 定义一个类AllTest
         suite_module = []
         for case in self.caseList:  # 从caselist元素组中循环取出case
             case_name = case.split("/")[-1]  # 通过split函数来将aaa/bbb分割字符串，-1取后面，0取前面
+            # case_test=case.split("/")[0]
+            # print(case_test)
             print(case_name + ".py")  # 打印出取出来的名称
             # 批量加载用例，第一个参数为用例存放路径，第一个参数为路径文件名
             discover = unittest.defaultTestLoader.discover(self.caseFile, pattern=case_name + '.py', top_level_dir=None)

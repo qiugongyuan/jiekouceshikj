@@ -18,7 +18,7 @@ def login():
         "name": "15330235989"
     }
 
-    luckyUrl = requests.post(url=url, data=json.dumps(data), headers=headers)
+    luckyUrl = requests.post(url=url,verify=False, data=json.dumps(data), headers=headers)
     result=luckyUrl.json()
     print(luckyUrl.text)
     # print(luckyUrl.status_code)
