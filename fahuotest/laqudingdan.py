@@ -37,10 +37,10 @@ def index():
         else:
             print(result['message'])
             return result
-           # return render_template('index.html', RESULT = result['message'])
+
 
 
 
 
 if __name__ == "__main__":
-    app.run(port = 8881)
+    app.run()
